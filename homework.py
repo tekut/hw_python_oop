@@ -62,7 +62,7 @@ class Training:
             self.duration,
             self.get_distance(),
             self.get_mean_speed(),
-            self.get_spent_calories()
+            self.get_spent_calories(),
         )
 
 
@@ -141,8 +141,7 @@ def read_package(workout_type: str, data: list) -> Training:
     }
     if workout_type not in workouts:
         raise KeyError(f'Неизвестный тип тренировки: {workout_type}')
-    else:
-        return workouts[workout_type](*data)
+    return workouts[workout_type](*data)
 
 
 def main(training: Training) -> None:
